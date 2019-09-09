@@ -32,13 +32,6 @@ const ContextType = {
  *   );
  */
 class App extends React.PureComponent {
-  static propTypes = {
-    context: PropTypes.shape(ContextType).isRequired,
-    children: PropTypes.element.isRequired,
-  };
-
-  static childContextTypes = ContextType;
-
   getChildContext() {
     return this.props.context;
   }
@@ -49,5 +42,12 @@ class App extends React.PureComponent {
     return React.Children.only(this.props.children);
   }
 }
+
+App.propTypes = {
+  context: PropTypes.shape(ContextType).isRequired,
+  children: PropTypes.element.isRequired,
+};
+
+App.childContextTypes = ContextType;
 
 export default App;

@@ -1,6 +1,6 @@
-@import '../variables.css';
+@import '../variables.scss';
 
-/* 
+/*
  * normalize.css is imported in JS file.
  * If you import external CSS file from your internal CSS
  * then it will be inlined and processed with CSS modules.
@@ -14,9 +14,11 @@ html {
   color: #222;
   font-weight: 100;
   font-size: 1em;
+
   /* ~16px; */
-  font-family: var(--font-family-base);
+  font-family: $font-family-base;
   line-height: 1.375;
+
   /* ~22px */
 }
 
@@ -110,12 +112,12 @@ textarea {
  * ========================================================================== */
 
 @media print {
-
   *,
   *::before,
   *::after {
     background: transparent !important;
     color: #000 !important;
+
     /* Black prints faster: http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important;

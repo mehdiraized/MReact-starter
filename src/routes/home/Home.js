@@ -1,6 +1,6 @@
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Home.css';
+import withStyles from 'isomorphic-style-loader/withStyles';
+import s from './Home.scss';
 
 class Home extends React.Component {
   render() {

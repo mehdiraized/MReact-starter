@@ -12,7 +12,7 @@ module.exports = {
     'prettier/react',
   ],
 
-  plugins: ['flowtype', 'css-modules', 'prettier'],
+  plugins: ['flowtype', 'css-modules', 'prettier', 'react-hooks'],
 
   globals: {
     __DEV__: true,
@@ -75,12 +75,19 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
     'react/prefer-stateless-function': 'off',
 
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+    'react/jsx-props-no-spreading': 'off',
+
     // ESLint plugin for prettier formatting
     // https://github.com/prettier/eslint-plugin-prettier
     'prettier/prettier': 'error',
 
     'react/forbid-prop-types': 'off',
     'react/destructuring-assignment': 'off',
+
+    // https://www.npmjs.com/package/eslint-plugin-react-hooks
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 
   settings: {

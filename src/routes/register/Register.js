@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Register.css';
+import withStyles from 'isomorphic-style-loader/withStyles';
+import s from './Register.scss';
 
 class Register extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
-
   render() {
     return (
       <div className={s.root}>
@@ -19,5 +15,9 @@ class Register extends React.Component {
     );
   }
 }
+
+Register.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default withStyles(s)(Register);

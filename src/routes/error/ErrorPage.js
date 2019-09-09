@@ -1,21 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ErrorPage.css';
+import withStyles from 'isomorphic-style-loader/withStyles';
+import s from './ErrorPage.scss';
 
 class ErrorPage extends React.Component {
-  static propTypes = {
-    error: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      message: PropTypes.string.isRequired,
-      stack: PropTypes.string.isRequired,
-    }),
-  };
-
-  static defaultProps = {
-    error: null,
-  };
-
   render() {
     if (__DEV__ && this.props.error) {
       return (
@@ -34,6 +22,18 @@ class ErrorPage extends React.Component {
     );
   }
 }
+
+ErrorPage.propTypes = {
+  error: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    stack: PropTypes.string.isRequired,
+  }),
+};
+
+ErrorPage.defaultProps = {
+  error: null,
+};
 
 export { ErrorPage as ErrorPageWithoutStyle };
 export default withStyles(s)(ErrorPage);
