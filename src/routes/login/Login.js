@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { inject, observer } from 'mobx-react';
 import withStyles from 'isomorphic-style-loader/withStyles';
 import s from './Login.scss';
 
+@inject('store')
+@observer
 class Login extends React.Component {
   render() {
     return (

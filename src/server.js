@@ -3,6 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import StyleContext from 'isomorphic-style-loader/StyleContext';
+import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import PrettyError from 'pretty-error';
@@ -14,6 +15,7 @@ import router from './router';
 // import assets from './asset-manifest.json'; // eslint-disable-line import/no-unresolved
 import chunks from './chunk-manifest.json'; // eslint-disable-line import/no-unresolved
 import config from './config';
+import AppStore from './mobx/appStore';
 
 process.on('unhandledRejection', (reason, p) => {
   console.error('Unhandled Rejection at:', p, 'reason:', reason);
@@ -76,7 +78,9 @@ app.get('*', async (req, res, next) => {
     const data = { ...route };
     data.children = ReactDOM.renderToString(
       <StyleContext.Provider value={{ insertCss }}>
-        <App context={context}>{route.component}</App>
+        <Provider store={AppStore}>
+          <App context={context}>{route.component}</App>
+        </Provider>
       </StyleContext.Provider>,
     );
     data.styles = [{ id: 'css', cssText: [...css].join('') }];

@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import StyleContext from 'isomorphic-style-loader/StyleContext';
 import deepForceUpdate from 'react-deep-force-update';
+import { Provider } from 'mobx-react';
 import queryString from 'query-string';
 import { createPath } from 'history';
 import App from './components/App';
 import history from './history';
 import { updateMeta } from './DOMUtils';
 import router from './router';
+import AppStore from './mobx/appStore';
 
 const insertCss = (...styles) => {
   // eslint-disable-next-line no-underscore-dangle
@@ -61,7 +63,9 @@ async function onLocationChange(location, action) {
     const renderReactApp = isInitialRender ? ReactDOM.hydrate : ReactDOM.render;
     appInstance = renderReactApp(
       <StyleContext.Provider value={{ insertCss }}>
-        <App context={context}>{route.component}</App>
+        <Provider store={AppStore}>
+          <App context={context}>{route.component}</App>
+        </Provider>
       </StyleContext.Provider>,
       container,
       () => {
