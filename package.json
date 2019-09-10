@@ -18,6 +18,7 @@
     "classnames": "^2.2.6",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+    "formik": "^1.5.8",
     "history": "^4.9.0",
     "isomorphic-style-loader": "^5.1.0",
     "mobx": "^5.13.0",
