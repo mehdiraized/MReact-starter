@@ -46,7 +46,7 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.29.1",
     "chokidar": "^3.4.0",
     "css-loader": "^3.6.0",
     "enzyme": "^3.11.0",
