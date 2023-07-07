@@ -92,7 +92,7 @@
     "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.2",
     "sass-loader": "^9.0.0",
-    "stylelint": "^13.6.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
     "svg-url-loader": "^6.0.0",
